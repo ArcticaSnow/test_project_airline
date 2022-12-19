@@ -69,5 +69,5 @@ logging:
 
 telegram-bot:
   bot.name: Kata_Pr_Airline_1_Bot
-  bot.token: 5924233902:AAEzFphGKxQLMcRsgBS25sl6YCtGBatGYVM
+  bot.token: 5924233902:AAEzFphGKxQLMcRsgBS25sl6YCtGBatGYV
   bot.owner: 807090833
