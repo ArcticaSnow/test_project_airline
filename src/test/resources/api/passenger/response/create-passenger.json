@@ -1,0 +1,12 @@
+{
+  "id" : 20,
+  "firstName" : "New",
+  "middleName" : "New",
+  "lastName" : "Newton",
+  "dateOfBirth" : "1995-10-10",
+  "username" : "new@mail.ru",
+  "password" : "$2a$12$iVd27FC7jkBN/yu0wysu3.bNxvZ09Jqf8UcxqswiQ47.Y6Wihk4pe",
+  "mobileNumber" : "+7 905 199-51-01",
+  "nickName" : null,
+  "documents" : []
+}

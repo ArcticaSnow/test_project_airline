@@ -1,0 +1,516 @@
+databaseChangeLog:
+    - changeSet:
+          id: 1669808089759-1
+          author: anduser (generated)
+          changes:
+              - createSequence:
+                    incrementBy: 1
+                    sequenceName: hibernate_sequence
+                    startValue: 1
+    - changeSet:
+          id: 1669808089759-2
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: aircraftPK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: model
+                              type: VARCHAR(255)
+                        - column:
+                              name: on_board_number
+                              type: VARCHAR(255)
+                        - column:
+                              name: stamp
+                              type: VARCHAR(255)
+                        - column:
+                              name: year_of_release
+                              type: INTEGER
+                    tableName: aircraft
+    - changeSet:
+          id: 1669808089759-3
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: book_refsPK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: ref_number
+                              type: VARCHAR(8)
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: version
+                              type: BIGINT
+                    tableName: book_refs
+    - changeSet:
+          id: 1669808089759-4
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: contactPK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: type
+                              type: VARCHAR(32)
+                        - column:
+                              name: value
+                              type: VARCHAR(255)
+                    tableName: contact
+    - changeSet:
+          id: 1669808089759-5
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: destinationsPK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              name: airport_code
+                              type: VARCHAR(255)
+                        - column:
+                              name: airport_name
+                              type: VARCHAR(255)
+                        - column:
+                              name: city
+                              type: VARCHAR(255)
+                        - column:
+                              name: country_code
+                              type: VARCHAR(255)
+                        - column:
+                              name: country_name
+                              type: VARCHAR(255)
+                        - column:
+                              name: timezone
+                              type: INTEGER
+                    tableName: destinations
+    - changeSet:
+          id: 1669808089759-6
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: documentsPK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: created_at
+                              type: TIMESTAMP WITHOUT TIME ZONE
+                        - column:
+                              name: expiry_date
+                              type: date
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: number
+                              type: VARCHAR(50)
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: type
+                              type: VARCHAR(50)
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: updated_at
+                              type: TIMESTAMP WITHOUT TIME ZONE
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: version
+                              type: BIGINT
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: passenger_id
+                              type: BIGINT
+                    tableName: documents
+    - changeSet:
+          id: 1669808089759-7
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: flightPK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              name: aircraft
+                              type: VARCHAR(255)
+                        - column:
+                              name: arrival_date_time
+                              type: TIMESTAMP WITHOUT TIME ZONE
+                        - column:
+                              name: departure_date_time
+                              type: TIMESTAMP WITHOUT TIME ZONE
+                        - column:
+                              name: flight_status
+                              type: INTEGER
+                        - column:
+                              name: inflight_services
+                              type: VARCHAR(255)
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: destination_from
+                              type: BIGINT
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: destination_to
+                              type: BIGINT
+                    tableName: flight
+    - changeSet:
+          id: 1669808089759-8
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: passengersPK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              name: birthday
+                              type: date
+                        - column:
+                              name: first_name
+                              type: VARCHAR(255)
+                        - column:
+                              name: last_name
+                              type: VARCHAR(255)
+                        - column:
+                              name: middle_name
+                              type: VARCHAR(255)
+                        - column:
+                              name: mobile_num
+                              type: VARCHAR(255)
+                        - column:
+                              name: nick_name
+                              type: VARCHAR(255)
+                        - column:
+                              name: password
+                              type: VARCHAR(255)
+                        - column:
+                              name: email
+                              type: VARCHAR(255)
+                    tableName: passengers
+    - changeSet:
+          id: 1669808089759-9
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: rolePK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              name: role
+                              type: VARCHAR(255)
+                    tableName: role
+    - changeSet:
+          id: 1669808089759-10
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: routePK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              name: arrival_date
+                              type: date
+                        - column:
+                              name: category
+                              type: VARCHAR(255)
+                        - column:
+                              name: departure_date
+                              type: date
+                        - column:
+                              name: destination_from
+                              type: VARCHAR(255)
+                        - column:
+                              name: destination_to
+                              type: VARCHAR(255)
+                        - column:
+                              name: number_of_seats
+                              type: INTEGER
+                    tableName: route
+    - changeSet:
+          id: 1669808089759-11
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: seatPK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              name: seat_number
+                              type: VARCHAR(255)
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: aircraft
+                              type: BIGINT
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: seat_type
+                              type: BIGINT
+                    tableName: seat
+    - changeSet:
+          id: 1669808089759-12
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: seat_typePK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              name: category
+                              type: VARCHAR(255)
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: has_addit_place
+                              type: BOOLEAN
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: has_tv
+                              type: BOOLEAN
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: has_window
+                              type: BOOLEAN
+                    tableName: seat_type
+    - changeSet:
+          id: 1669808089759-13
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: users_rolesPK
+                              name: user_id
+                              type: BIGINT
+                        - column:
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: users_rolesPK
+                              name: role_id
+                              type: BIGINT
+                    tableName: users_roles
+    - changeSet:
+          id: 1669808089759-14
+          author: anduser (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              autoIncrement: true
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: usrPK
+                              name: id
+                              type: BIGINT
+                        - column:
+                              constraints:
+                                  nullable: false
+                              name: is_active
+                              type: BOOLEAN
+                        - column:
+                              name: nickname
+                              type: VARCHAR(255)
+                        - column:
+                              name: password
+                              type: VARCHAR(255)
+                        - column:
+                              name: registration_date
+                              type: date
+                    tableName: usr
+    - changeSet:
+          id: 1669808089759-15
+          author: anduser (generated)
+          changes:
+              - addUniqueConstraint:
+                    columnNames: type, value
+                    constraintName: UniqueContactAddress
+                    tableName: contact
+    - changeSet:
+          id: 1669808089759-16
+          author: anduser (generated)
+          changes:
+              - addUniqueConstraint:
+                    columnNames: ref_number
+                    constraintName: UniqueRefNumber
+                    tableName: book_refs
+    - changeSet:
+          id: 1669808089759-17
+          author: anduser (generated)
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: user_id
+                    baseTableName: users_roles
+                    constraintName: FK6h79md4xvnukidxrjob02u4xr
+                    deferrable: false
+                    initiallyDeferred: false
+                    referencedColumnNames: id
+                    referencedTableName: usr
+                    validate: true
+    - changeSet:
+          id: 1669808089759-18
+          author: anduser (generated)
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: aircraft
+                    baseTableName: seat
+                    constraintName: FK7604ocywpls7lw9oh0yrfg6pd
+                    deferrable: false
+                    initiallyDeferred: false
+                    referencedColumnNames: id
+                    referencedTableName: aircraft
+                    validate: true
+    - changeSet:
+          id: 1669808089759-19
+          author: anduser (generated)
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: seat_type
+                    baseTableName: seat
+                    constraintName: FK8k10ohat8fn0isvel7x7v9v74
+                    deferrable: false
+                    initiallyDeferred: false
+                    referencedColumnNames: id
+                    referencedTableName: seat_type
+                    validate: true
+    - changeSet:
+          id: 1669808089759-20
+          author: anduser (generated)
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: destination_from
+                    baseTableName: flight
+                    constraintName: FKi5jk3pt560u6lmhiparw4wp36
+                    deferrable: false
+                    initiallyDeferred: false
+                    referencedColumnNames: id
+                    referencedTableName: destinations
+                    validate: true
+    - changeSet:
+          id: 1669808089759-21
+          author: anduser (generated)
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: destination_to
+                    baseTableName: flight
+                    constraintName: FKn4jqxwea5fam8fdtx4bmek97v
+                    deferrable: false
+                    initiallyDeferred: false
+                    referencedColumnNames: id
+                    referencedTableName: destinations
+                    validate: true
+    - changeSet:
+          id: 1669808089759-22
+          author: anduser (generated)
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: passenger_id
+                    baseTableName: documents
+                    constraintName: FKri20xm3g62nl1e9c80yre2ien
+                    deferrable: false
+                    initiallyDeferred: false
+                    referencedColumnNames: id
+                    referencedTableName: passengers
+                    validate: true
+    - changeSet:
+          id: 1669808089759-23
+          author: anduser (generated)
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: role_id
+                    baseTableName: users_roles
+                    constraintName: FKt4v0rrweyk393bdgt107vdx0x
+                    deferrable: false
+                    initiallyDeferred: false
+                    referencedColumnNames: id
+                    referencedTableName: role
+                    validate: true
+

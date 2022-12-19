@@ -1,0 +1,51 @@
+[ {
+  "id" : 1,
+  "firstName" : "Admin",
+  "middleName" : "Adminovich",
+  "lastName" : "Adminov",
+  "dateOfBirth" : "2000-08-01",
+  "username" : "admin@mail.ru",
+  "password" : "$2a$12$uihsiP1OnAtsNyYy/uySxeuaGcl9yFmFsujSn8MSwivpTUx0f5Ecm",
+  "mobileNumber" : "+7 916 123-45-67",
+  "nickName" : "@admin"
+}, {
+  "id" : 2,
+  "firstName" : "Manager",
+  "middleName" : null,
+  "lastName" : "Managerov",
+  "dateOfBirth" : "1991-10-13",
+  "username" : "manager@mail.ru",
+  "password" : "$2a$12$/bvCLyjsmrqwgme39yQcMOFn7y/MwrqYjwFotk4b/BY/OJebXOtpu",
+  "mobileNumber" : "+7 910 123-45-67",
+  "nickName" : "@manager"
+}, {
+  "id" : 3,
+  "firstName" : "Passenger",
+  "middleName" : "Passengerovich",
+  "lastName" : "Pass",
+  "dateOfBirth" : "2000-10-05",
+  "username" : "passenger@mail.ru",
+  "password" : "$2a$12$/UQ7grshQafykFQa3wpdhuqM3ZxiNBYyiprwF9eQDSYHIQIBoPm22",
+  "mobileNumber" : "+7 916 123-45-56",
+  "nickName" : "@passenger"
+}, {
+  "id" : 4,
+  "firstName" : "Delita",
+  "middleName" : "Delitovna",
+  "lastName" : "Deletova",
+  "dateOfBirth" : "1992-10-10",
+  "username" : "del@mail.ru",
+  "password" : "$2a$12$G2EAzTVm7VZ4dN0r/Llh.e.aL8sek0T0ek5ca63sIzi28G17B1gd2",
+  "mobileNumber" : "+7 905 123-78-90",
+  "nickName" : "@del"
+}, {
+  "id" : 5,
+  "firstName" : "Dela",
+  "middleName" : "Delitovna",
+  "lastName" : "Updatova",
+  "dateOfBirth" : "1992-10-10",
+  "username" : "dela@mail.ru",
+  "password" : "$2a$12$G2EAzTVm7VZ4dN0r/Llh.e.aL8sek0T0ek5ca63sIzi28G17B1gd2",
+  "mobileNumber" : "+7 905 100-00-00",
+  "nickName" : null
+} ]

@@ -1,0 +1,11 @@
+{
+  "id" : 5,
+  "firstName" : "Dela",
+  "middleName" : "Delitovna",
+  "lastName" : "Updatova",
+  "dateOfBirth" : "1992-10-10",
+  "username" : "dela@mail.ru",
+  "password" : "$2a$12$G2EAzTVm7VZ4dN0r/Llh.e.aL8sek0T0ek5ca63sIzi28G17B1gd2",
+  "mobileNumber" : "+7 905 100-00-00",
+  "nickName" : null
+}

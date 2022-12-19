@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  postgres:
+    container_name: postgres
+    image: library/postgres:15.0-bullseye
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-root}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-root}
+      POSTGRES_DB: keycloak_db
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  keycloak:
+    image: jboss/keycloak:latest
+    container_name: keycloak
+    volumes:
+      - ./keycloak/realm-export.json:/opt/jboss/keycloak/imports/realm-export.json
+      - ./keycloak/keycloak-add-user.json:/opt/jboss/keycloak/standalone/configuration/keycloak-add-user.json
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak_db
+      DB_USER: ${POSTGRES_USER:-root}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-root}
+      KEYCLOAK_IMPORT: /opt/jboss/keycloak/imports/realm-export.json
+    ports:
+      - "8484:8080"
+    depends_on:
+      - postgres
+    links:
+      - "postgres:postgres"

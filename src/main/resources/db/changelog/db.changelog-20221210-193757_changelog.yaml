@@ -1,0 +1,48 @@
+databaseChangeLog:
+- changeSet:
+    id: 1670701081549-1
+    author: Евгений (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: destination_from
+            type: int8
+        tableName: route
+- changeSet:
+    id: 1670701081549-2
+    author: Евгений (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: destination_to
+            type: int8
+        tableName: route
+- changeSet:
+    id: 1670701081549-3
+    author: Евгений (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: destination_from
+        baseTableName: route
+        constraintName: FKkm2cjxwplkpv233su1aphpik9
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: destinations
+        validate: true
+- changeSet:
+    id: 1670701081549-4
+    author: Евгений (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: destination_to
+        baseTableName: route
+        constraintName: FKq1t7j6pfc28xiohiicgra7209
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: destinations
+        validate: true
+

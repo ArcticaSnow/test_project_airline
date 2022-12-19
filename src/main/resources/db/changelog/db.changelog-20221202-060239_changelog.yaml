@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1669960971445-1
+      author: Катя (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: aircraft_id
+                  type: int8
+            tableName: flight
+  - changeSet:
+      id: 1669960971445-2
+      author: Катя (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: aircraft_id
+            baseTableName: flight
+            constraintName: FKmofq89ullrd4qk1hllnyf8pn5
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: aircraft
+            validate: true
+  - changeSet:
+      id: 1669960971445-3
+      author: Катя (generated)
+      changes:
+        - dropColumn:
+            columnName: aircraft
+            tableName: flight
+
+

@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/db.changelog-20221130-113444_changelog.yaml
+  - include:
+      file: db/changelog/db.changelog-20221202-060239_changelog.yaml
+  - include:
+      file: db/changelog/db.changelog-20221201-061106_changelog.yaml
+  - include:
+      file: db/changelog/db.changelog-20221210-192011_changelog.yaml
+  - include:
+      file: db/changelog/db.changelog-20221210-193757_changelog.yaml

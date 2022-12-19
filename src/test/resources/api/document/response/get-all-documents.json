@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "type": "INTERNATIONAL_PASSPORT",
+    "number": "123",
+    "expiry_date": "2001-10-05",
+    "passenger": 1
+  },
+  {
+    "id": 2,
+    "type": "INTERNATIONAL_PASSPORT",
+    "number": "456",
+    "expiry_date": "2002-10-05",
+    "passenger": 2
+  },
+  {
+    "id": 3,
+    "type": "INTERNATIONAL_PASSPORT",
+    "number": "789",
+    "expiry_date": "2003-10-05",
+    "passenger": 3
+  },
+  {
+    "id": 4,
+    "type": "INTERNATIONAL_PASSPORT",
+    "number": "012",
+    "expiry_date": "2004-10-05",
+    "passenger": 1
+  }
+]

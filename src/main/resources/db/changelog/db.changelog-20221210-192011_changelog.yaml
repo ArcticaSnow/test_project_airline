@@ -1,0 +1,16 @@
+databaseChangeLog:
+- changeSet:
+    id: 1670700015568-1
+    author: Евгений (generated)
+    changes:
+    - dropColumn:
+        columnName: destination_from
+        tableName: route
+- changeSet:
+    id: 1670700015568-2
+    author: Евгений (generated)
+    changes:
+    - dropColumn:
+        columnName: destination_to
+        tableName: route
+

@@ -1,0 +1,11 @@
+{
+  "id" : 1,
+  "firstName" : "Admin",
+  "middleName" : "Adminovich",
+  "lastName" : "Adminov",
+  "dateOfBirth" : "2000-08-01",
+  "username" : "admin@mail.ru",
+  "password" : "$2a$12$uihsiP1OnAtsNyYy/uySxeuaGcl9yFmFsujSn8MSwivpTUx0f5Ecm",
+  "mobileNumber" : "+7 916 123-45-67",
+  "nickName" : "@admin"
+}

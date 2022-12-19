@@ -1,0 +1,73 @@
+server:
+  port: 8888
+  servlet:
+    session:
+      timeout: -1
+
+spring:
+  application:
+    name: app
+  profiles:
+    active: dev, prod
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/airline_db?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Europe/Moscow
+    username: root
+    password: root
+    hikari:
+      leak-detection-threshold: 60000
+      maximum-pool-size: 20
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        format_sql: true
+        jdbc:
+          time_zone: Europe/Moscow
+  security: #added @Toboe512
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${KEYCLOAK_REALM_CERT_URL:http://localhost:8484/auth/realms/airline-realm/protocol/openid-connect/certs}
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  jackson:
+    serialization:
+      indent-output: true
+
+  mail: #added Alexey Sen (alexey.sen@gmail.com)
+    host: smtp.gmail.com
+    port: 587
+    username: uxair1.kata
+    password: ibftonglewqqyjhd  # It's google application password for email sending only
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+springdoc:
+  default-produces-media-type: application/json
+
+keycloak: #added @Toboe512
+  auth-server-url: http://localhost:8484/auth
+  realm: airline-realm
+  resource: airline-client
+  public-client: true
+  use-resource-role-mappings: true
+
+logging:
+  level.root: info
+  level.org.springframework.security: info
+  level.ru.kataproject.p_sm_airlines_1: info
+
+telegram-bot:
+  bot.name: Kata_Pr_Airline_1_Bot
+  bot.token: 5924233902:AAEzFphGKxQLMcRsgBS25sl6YCtGBatGYVM
+  bot.owner: 807090833

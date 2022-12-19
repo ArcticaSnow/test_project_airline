@@ -1,0 +1,12 @@
+databaseChangeLog:
+- changeSet:
+    id: 1669875078054-1
+    author: Катя (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: preferred_contact
+            type: boolean
+        tableName: contact
+

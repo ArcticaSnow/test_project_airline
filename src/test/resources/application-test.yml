@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: app
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL}   #переменные среды окружения
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    openInView: false
+    show_sql: ${SPRING_SHOW_SQL:true}
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: ${SPRING_SHOW_SQL:true}
+        format_sql: ${SPRING_FORMAT_SQL:true}
+        enable_lazy_load_no_trans: true
+  liquibase:
+    enabled: ${SPRING_LIQUIBASE_ENABLED:true}
+    change-log: classpath:db/changelog-test.xml
+    default-schema: public
+    url: ${SPRING_DATASOURCE_URL}
+    user: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+  mail: # added Alexey Sen (alexey.sen@gmail.com)
+    host: smtp.gmail.com
+    port: 587
+    username: uxair1.kata
+    password: ibftonglewqqyjhd  # It's google application password for email sending only
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+keycloak:
+  auth-server-url: http://localhost:8484/auth
+  realm: airline-realm
+  resource: airline-client
+  public-client: true
+  use-resource-role-mappings: true
+

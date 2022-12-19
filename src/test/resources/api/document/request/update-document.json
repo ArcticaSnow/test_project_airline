@@ -1,0 +1,7 @@
+{
+  "id":2,
+  "type":"NATIONAL_PASSPORT",
+  "number":"42",
+  "expiry_date": "2025-10-10",
+  "passenger":1
+}
